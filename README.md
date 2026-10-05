@@ -18,7 +18,6 @@
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge\&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge\&logo=typescript)
 ![Python](https://img.shields.io/badge/Python-3.11--3.14-3776AB?style=for-the-badge\&logo=python)
-![License](https://img.shields.io/badge/license-commercial-111827?style=for-the-badge)
 
 </p>
 
