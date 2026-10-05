@@ -1,0 +1,29 @@
+# DataRefine Studio — Python sidecar (core)
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+pydantic>=2.7.0
+duckdb>=1.1.0
+polars>=1.9.0
+pyarrow>=17.0.0
+SQLAlchemy>=2.0.0
+rapidfuzz>=3.9.0
+openpyxl>=3.1.0
+xlsxwriter>=3.2.0
+xlrd>=2.0.1
+numpy>=2.0.0
+pandas>=2.2.0
+httpx>=0.27.0
+orjson>=3.10.0
+python-dateutil>=2.9.0
+phonenumbers>=8.13.0
+dateparser>=1.2.0
+babel>=2.15.0
+pycountry>=24.6.1
+email-validator>=2.2.0
+pymysql>=1.1.0
+pg8000>=1.31.0
+# Optional:
+# sshtunnel>=0.4.0
+# snowflake-connector-python>=3.12.0
+# pyodbc>=5.1.0

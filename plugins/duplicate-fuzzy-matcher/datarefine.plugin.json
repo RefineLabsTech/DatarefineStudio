@@ -1,0 +1,121 @@
+{
+  "name": "datarefine.duplicate-fuzzy-matcher",
+  "displayName": "Duplicate & Fuzzy Matcher",
+  "version": "1.0.0",
+  "publisher": "DataRefine",
+  "icon": "clean",
+  "description": "Find possible duplicate values in a text column, review similarity groups, and merge variants into a chosen canonical value.",
+  "engines": { "datarefine": ">=1.0.0" },
+  "permissions": [],
+  "contributes": {
+    "commands": [
+      {
+        "id": "datarefine.duplicate-fuzzy-matcher.preview",
+        "title": "Preview duplicate groups",
+        "python": "main.py:preview"
+      },
+      {
+        "id": "datarefine.duplicate-fuzzy-matcher.apply",
+        "title": "Apply canonical values",
+        "python": "main.py:apply"
+      }
+    ],
+    "views": [
+      {
+        "id": "datarefine.duplicate-fuzzy-matcher.panel",
+        "title": "Duplicate Matcher",
+        "icon": "clean",
+        "sidebar": true,
+        "body": "Select a text column, preview possible match groups, then apply one undoable canonical-value merge. Original rows are not deleted. Ignore groups by entering their numbers from the preview.",
+        "fields": [
+          {
+            "id": "column",
+            "label": "Text column",
+            "type": "text",
+            "placeholder": "e.g. customer_name",
+            "hint": "Names, addresses, email-like values, and other text columns work best."
+          },
+          {
+            "id": "method",
+            "label": "Matching method",
+            "type": "select",
+            "default": "hybrid",
+            "options": [
+              { "value": "hybrid", "label": "Hybrid (recommended)" },
+              { "value": "normalized", "label": "Normalized / whitespace-insensitive" },
+              { "value": "levenshtein", "label": "Levenshtein distance" },
+              { "value": "jaro-winkler", "label": "Jaro-Winkler" },
+              { "value": "n-gram", "label": "Character n-gram" },
+              { "value": "phonetic", "label": "Phonetic / Soundex" }
+            ],
+            "hint": "Hybrid combines edit, Jaro-Winkler, n-gram, and phonetic signals."
+          },
+          {
+            "id": "threshold",
+            "label": "Similarity threshold (%)",
+            "type": "text",
+            "default": "90",
+            "placeholder": "90",
+            "hint": "Higher is stricter. Try 85–92 for names; normalized matches are always grouped."
+          },
+          {
+            "id": "canonical",
+            "label": "Canonical value",
+            "type": "select",
+            "default": "most_frequent",
+            "options": [
+              { "value": "most_frequent", "label": "Most frequent spelling" },
+              { "value": "shortest", "label": "Shortest spelling" },
+              { "value": "first_seen", "label": "First seen in the sheet" }
+            ]
+          },
+          {
+            "id": "min_group_size",
+            "label": "Minimum group size",
+            "type": "text",
+            "default": "2",
+            "placeholder": "2",
+            "hint": "Counts variants or repeated rows, whichever is larger."
+          },
+          {
+            "id": "max_unique",
+            "label": "Max unique values to compare",
+            "type": "text",
+            "default": "2000",
+            "placeholder": "2000",
+            "hint": "A safety limit to prevent an accidental expensive all-pairs comparison."
+          },
+          {
+            "id": "ignore_groups",
+            "label": "Ignore group numbers",
+            "type": "text",
+            "placeholder": "e.g. 2, 7, 14",
+            "hint": "Optional. Enter numbers shown by Preview; ignored groups are not changed."
+          }
+        ],
+        "options": [
+          {
+            "id": "preview",
+            "label": "Preview possible match groups",
+            "hint": "Read-only analysis; no cells are changed.",
+            "command": "datarefine.duplicate-fuzzy-matcher.preview",
+            "session": true
+          },
+          {
+            "id": "apply",
+            "label": "Merge into canonical values",
+            "hint": "Applies the reviewed groups as one undoable operation. Rows are preserved.",
+            "command": "datarefine.duplicate-fuzzy-matcher.apply",
+            "session": true
+          }
+        ]
+      }
+    ],
+    "themes": [],
+    "snippets": [],
+    "statusBar": [],
+    "rules": [],
+    "hooks": {},
+    "ai": { "steps": [], "prompts": {} }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "datarefine-user-libs",
+  "private": true,
+  "description": "npm install packages here; require() them from the JavaScript editor."
+}

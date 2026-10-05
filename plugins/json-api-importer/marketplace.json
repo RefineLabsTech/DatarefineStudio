@@ -1,0 +1,10 @@
+{
+  "id": "datarefine.json-api-importer",
+  "name": "JSON/API Importer",
+  "version": "1.0.0",
+  "publisher": "DataRefine",
+  "icon": "database",
+  "artifact": "DataRefineJsonApiImporter.zip",
+  "entitlement": "open",
+  "localFirst": true
+}

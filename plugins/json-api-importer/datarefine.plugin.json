@@ -1,0 +1,221 @@
+{
+  "name": "datarefine.json-api-importer",
+  "displayName": "JSON/API Importer",
+  "version": "1.0.0",
+  "publisher": "DataRefine",
+  "icon": "database",
+  "description": "Fetch JSON from an HTTPS API, flatten nested objects, convert arrays, preview the result, and import it into the active DataRefine sheet.",
+  "engines": { "datarefine": ">=1.0.0" },
+  "permissions": ["python.network", "python.import"],
+  "contributes": {
+    "commands": [
+      {
+        "id": "datarefine.json-api-importer.preview",
+        "title": "Preview API response",
+        "python": "main.py:preview"
+      },
+      {
+        "id": "datarefine.json-api-importer.import",
+        "title": "Import API response",
+        "python": "main.py:import_data"
+      }
+    ],
+    "views": [
+      {
+        "id": "datarefine.json-api-importer.panel",
+        "title": "JSON/API Importer",
+        "icon": "database",
+        "sidebar": true,
+        "body": "Connect to a JSON API with GET, optional headers, API-key or Bearer authentication, and pagination. Preview the flattened result before importing it into the active sheet. Network access requires Trust in Extensions.",
+        "fields": [
+          {
+            "id": "url",
+            "label": "API URL",
+            "type": "text",
+            "placeholder": "https://api.example.com/customers",
+            "hint": "HTTPS is required. HTTP is allowed only for localhost development. Do not put secrets in the URL."
+          },
+          {
+            "id": "records_path",
+            "label": "Records path (optional)",
+            "type": "text",
+            "placeholder": "data.items",
+            "hint": "For a response like { data: { items: [...] } }. Leave blank for automatic data/items/results detection."
+          },
+          {
+            "id": "headers_json",
+            "label": "Additional headers (JSON)",
+            "type": "textarea",
+            "default": "{\"Accept\":\"application/json\"}",
+            "placeholder": "{\"X-Tenant\":\"acme\"}",
+            "hint": "Enter a JSON object. Header values are used for this request only."
+          },
+          {
+            "id": "auth_type",
+            "label": "Authentication",
+            "type": "select",
+            "default": "none",
+            "options": [
+              { "value": "none", "label": "No authentication" },
+              { "value": "bearer", "label": "Bearer token" },
+              { "value": "api_key", "label": "API key header" }
+            ]
+          },
+          {
+            "id": "api_key_header",
+            "label": "API-key header name",
+            "type": "text",
+            "default": "X-API-Key",
+            "placeholder": "X-API-Key",
+            "when": { "field": "auth_type", "equals": "api_key" }
+          },
+          {
+            "id": "credential",
+            "label": "Token or API key",
+            "type": "password",
+            "placeholder": "Used for this operation only",
+            "hint": "Not saved by this plugin and never shown in the preview report.",
+            "when": { "field": "auth_type", "in": ["bearer", "api_key"] }
+          },
+          {
+            "id": "pagination",
+            "label": "Pagination",
+            "type": "select",
+            "default": "none",
+            "options": [
+              { "value": "none", "label": "None — one GET" },
+              { "value": "page", "label": "Page number parameter" },
+              { "value": "offset", "label": "Offset and limit parameters" },
+              { "value": "next_link", "label": "Follow next-link field" }
+            ]
+          },
+          {
+            "id": "page_param",
+            "label": "Page parameter",
+            "type": "text",
+            "default": "page",
+            "placeholder": "page",
+            "when": { "field": "pagination", "equals": "page" }
+          },
+          {
+            "id": "start_page",
+            "label": "Starting page",
+            "type": "text",
+            "default": "1",
+            "placeholder": "1",
+            "when": { "field": "pagination", "equals": "page" }
+          },
+          {
+            "id": "offset_param",
+            "label": "Offset parameter",
+            "type": "text",
+            "default": "offset",
+            "placeholder": "offset",
+            "when": { "field": "pagination", "equals": "offset" }
+          },
+          {
+            "id": "start_offset",
+            "label": "Starting offset",
+            "type": "text",
+            "default": "0",
+            "placeholder": "0",
+            "when": { "field": "pagination", "equals": "offset" }
+          },
+          {
+            "id": "page_size_param",
+            "label": "Page-size parameter",
+            "type": "text",
+            "default": "limit",
+            "placeholder": "limit",
+            "hint": "Used by page and offset modes; clear it if the API does not support a size parameter.",
+            "when": { "field": "pagination", "in": ["page", "offset"] }
+          },
+          {
+            "id": "limit_param",
+            "label": "Limit parameter",
+            "type": "text",
+            "default": "limit",
+            "placeholder": "limit",
+            "when": { "field": "pagination", "equals": "offset" }
+          },
+          {
+            "id": "page_size",
+            "label": "Page size",
+            "type": "text",
+            "default": "100",
+            "placeholder": "100",
+            "when": { "field": "pagination", "in": ["page", "offset"] }
+          },
+          {
+            "id": "next_link_path",
+            "label": "Next-link path",
+            "type": "text",
+            "default": "next",
+            "placeholder": "links.next",
+            "hint": "Supports a relative or absolute URL in the response, for example links.next.",
+            "when": { "field": "pagination", "equals": "next_link" }
+          },
+          {
+            "id": "max_pages",
+            "label": "Maximum pages",
+            "type": "text",
+            "default": "10",
+            "placeholder": "10",
+            "hint": "Safety limit: 1–100 pages."
+          },
+          {
+            "id": "array_mode",
+            "label": "Array conversion",
+            "type": "select",
+            "default": "join",
+            "options": [
+              { "value": "join", "label": "Join scalar values" },
+              { "value": "json", "label": "Keep as JSON text" },
+              { "value": "first", "label": "Use first array value" }
+            ]
+          },
+          {
+            "id": "delimiter",
+            "label": "Flattened-column delimiter",
+            "type": "select",
+            "default": ".",
+            "options": [
+              { "value": ".", "label": "Dot — customer.address.city" },
+              { "value": "_", "label": "Underscore — customer_address_city" },
+              { "value": "__", "label": "Double underscore" }
+            ]
+          },
+          {
+            "id": "timeout",
+            "label": "Request timeout (seconds)",
+            "type": "text",
+            "default": "30",
+            "placeholder": "30"
+          }
+        ],
+        "options": [
+          {
+            "id": "preview",
+            "label": "Preview API response",
+            "hint": "Fetches and flattens records without changing the sheet.",
+            "command": "datarefine.json-api-importer.preview",
+            "session": false
+          },
+          {
+            "id": "import",
+            "label": "Import into active sheet",
+            "hint": "Open a dataset first. The imported result becomes one undoable operation.",
+            "command": "datarefine.json-api-importer.import",
+            "session": true
+          }
+        ]
+      }
+    ],
+    "themes": [],
+    "snippets": [],
+    "statusBar": [],
+    "rules": [],
+    "hooks": {},
+    "ai": { "steps": [], "prompts": {} }
+  }
+}

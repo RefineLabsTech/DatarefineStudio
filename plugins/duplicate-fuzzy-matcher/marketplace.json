@@ -1,0 +1,10 @@
+{
+  "id": "datarefine.duplicate-fuzzy-matcher",
+  "name": "Duplicate & Fuzzy Matcher",
+  "version": "1.0.0",
+  "publisher": "DataRefine",
+  "icon": "clean",
+  "artifact": "DataRefineDuplicateFuzzyMatcher.zip",
+  "entitlement": "open",
+  "localFirst": true
+}

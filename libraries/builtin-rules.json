@@ -1,0 +1,5 @@
+[
+  { "name": "Trim whitespace", "kind": "universal", "body": "trim" },
+  { "name": "Hidden unicode", "kind": "universal", "body": "hidden_unicode" },
+  { "name": "Email cleanup", "kind": "universal", "body": "email_cleanup" }
+]

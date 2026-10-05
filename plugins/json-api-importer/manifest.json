@@ -1,0 +1,17 @@
+{
+  "id": "datarefine.json-api-importer",
+  "name": "JSON/API Importer",
+  "version": "1.0.0",
+  "type": "tool",
+  "permissions": ["python.network", "python.import"],
+  "capabilities": [
+    "api-import",
+    "json-flattening",
+    "pagination",
+    "data-ingestion",
+    "nested-json"
+  ],
+  "description": "Fetches JSON from HTTPS APIs, flattens nested objects, converts arrays, previews records, and imports the result into the active DataRefine sheet.",
+  "publisher": "DataRefine",
+  "icon": "database"
+}

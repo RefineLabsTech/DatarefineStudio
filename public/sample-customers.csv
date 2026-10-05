@@ -1,0 +1,31 @@
+id,full_name,email,phone,country,signup,amount,status,notes
+1,  Aisha Rahman  ,AISHA@Example.COM, +880 1711-223344,bangladesh,2024/01/12,"$1,240.50",active,  leading spaces
+2,Jamal  Khan,jamal@@mail.com,01711223344,BD,12-02-2024,980,ACTIVE,duplicate  spaces
+3,Mei Chen,mei.chen@example.com,(415) 555-0199,usa,2024-03-01,"€2,100.00",active,
+4,José  García,jose@example.com,+34 612 00 11 22,spain,01/03/24,1500.5,pending,café  ​hidden
+5,Priya Nair,priya.nair@,9876543210,india,2024-04-19,"Rs 3,400",active,
+6,Alex O'Neil,alex.oneil@example.com,555-0100,United States,19 Apr 2024,0,inactive,zero amount
+7,Fatima Begum,fatima@example.com,+8801711000000,Bangladesh,2024-05-02,220,ACTIVE,  nbsp
+8,Chen Wei,chen.wei@example.com,13800138000,china,2024/06/08,1100,active,
+9,Nora  Ali,nora@example.com,020 7946 0958,uk,2024-07-01,"£890.00",pending,
+10,Samir Patel,SAMIR.PATEL@EXAMPLE.COM,1-800-555-1212,USA,07/15/2024,45.00,active,ALLCAPS email
+11,Lina  Costa,lina.costa@example.com,+55 11 99999-0001,brazil,2024-08-20,760,active,
+12,Omar Faruk,omar faruk@example.com,01811-998877,bd,20-08-2024,null,active,space in email
+13,Hana Kim,hana.kim@example.com,+82-10-1234-5678,korea,2024-09-09,1340.75,ACTIVE,
+14,David  Smith,david.smith@example.com,5551234,canada,2024/09/10,"CAD 88.20",inactive,
+15,Amina Yusuf,amina@example.com,+234 803 111 2222,nigeria,10-09-2024,500,pending,
+16,Elena Petrova,elena@example.com,+7 495 000-11-22,russia,2024-10-01,2100,active,
+17,Tom Hughes,tom.hughes@example.com,+44 7700 900123,England,2024-10-11,330,active,
+18,Rina Das,rina.das@example.com,01799887766,Bangladesh,11/10/2024,90,ACTIVE,trailing  
+19,Kenji Sato,kenji.sato@example.com,+81 90 1234 5678,japan,2024-11-02,1250,pending,
+20,Maya  Roy,maya.roy@example.com,01611 223344,bd,2024-11-15,"1,111.11",active,comma amount
+21,Chris Lee,chris.lee@example.com,4155550101,US,15 Nov 2024,670,active,
+22,Sara Ahmed,sara.ahmed@@gmail.com,01911-000111,bangladesh,2024-12-01,40,inactive,double at
+23,Luis  Hernández,luis@example.com,+52 55 1234 5678,mexico,01-12-2024,980,active,
+24,Nadia Khan,nadia.khan@example.com,+880 1911 222333,BD,2024-12-20,150,ACTIVE,
+25,Ben Wright,ben.wright@example.com,02079460900,United Kingdom,2025-01-05,210,pending,
+26,Aisha Rahman,aisha@example.com,+8801711223344,bangladesh,2024-01-12,1240.5,active,duplicate name
+27,  ,missing.name@example.com,000,unknown,not-a-date,abc,??,blank name
+28,Zara Ali,zara@example.com,+971 50 123 4567,uae,2025-02-02,3000,active,
+29,Hugo Blanc,hugo.blanc@example.com,+33 6 12 34 56 78,france,02/02/2025,440,active,
+30,Ines Müller,ines.muller@example.com,+49 151 23456789,germany,2025-03-03,890.9,pending,

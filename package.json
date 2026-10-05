@@ -1,0 +1,48 @@
+{
+  "name": "datarefine-studio",
+  "private": true,
+  "type": "module",
+  "version": "3.4.2",
+  "description": "DataRefine Studio — local-first data cleaning IDE",
+  "scripts": {
+    "dev": "concurrently -k \"npm:sidecar\" \"npm:ui\"",
+    "ui": "vite",
+    "sidecar": "node scripts/start-sidecar.cjs",
+    "build": "vite build",
+    "build:engine": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-engine.ps1",
+    "package:windows": "node scripts/package-windows.cjs",
+    "desktop": "tauri build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@tanstack/react-query": "^5.62.0",
+    "allotment": "^1.20.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.43.0",
+    "lodash": "^4.18.1",
+    "lucide-react": "^0.468.0",
+    "marked": "^18.0.12",
+    "monaco-editor": "^0.52.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.0",
+    "react-responsive-carousel": "^3.2.23",
+    "tabulator-tables": "^6.3.1",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}

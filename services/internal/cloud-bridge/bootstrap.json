@@ -1,0 +1,16 @@
+{
+  "keyId": "drs-main-2025",
+  "version": 4,
+  "issuedAt": "2026-09-19T13:05:05.286Z",
+  "expiresAt": "2026-12-18T13:05:05.287Z",
+  "api": {
+    "baseUrl": "https://datarefine-license-cloud.vercel.app",
+    "fallbackBaseUrls": []
+  },
+  "app": {
+    "name": "DataRefine Studio"
+  },
+  "endpoints": {},
+  "features": {},
+  "signature": "cfca7db1c8bfe14b69696211561ed8500afb51a47604d82a85776b7db7e0d3b2336b75db88a975c000ec438c047113a247088041f4a29a00cba3216901daa007"
+}

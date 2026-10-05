@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DataRefine Studio",
+  "version": "3.4.2",
+  "identifier": "ai.datarefine.studio",
+  "mainBinaryName": "datarefine-studio",
+  "build": {
+    "beforeDevCommand": "npm run ui",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build && npm run package:windows",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "create": false,
+        "title": "DataRefine Studio",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1024,
+        "minHeight": 680,
+        "resizable": true,
+        "center": true,
+        "decorations": false,
+        "shadow": true,
+        "visible": true,
+        "focus": true,
+        "theme": "Dark",
+        "backgroundColor": { "red": 15, "green": 17, "blue": 21, "alpha": 255 }
+      }
+    ],
+    "security": {
+      "csp": null,
+      "dangerousDisableAssetCspModification": true
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "resources/datarefine-engine.exe",
+      "resources/datarefine/**/*"
+    ],
+    "category": "DeveloperTool",
+    "shortDescription": "Local-first data cleaning IDE",
+    "longDescription": "DataRefine Studio is a local-first data cleaning IDE: spreadsheet grid, DuckDB SQL, JavaScript (V8), and Polars.",
+    "windows": {
+      "allowDowngrades": false,
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "perMachine",
+        "displayLanguageSelector": true,
+        "languages": ["English"],
+        "startMenuFolder": "DataRefine Studio",
+        "installerHooks": "./windows/hooks.nsh"
+      }
+    }
+  }
+}

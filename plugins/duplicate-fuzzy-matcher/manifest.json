@@ -1,0 +1,17 @@
+{
+  "id": "datarefine.duplicate-fuzzy-matcher",
+  "name": "Duplicate & Fuzzy Matcher",
+  "version": "1.0.0",
+  "type": "tool",
+  "permissions": [],
+  "capabilities": [
+    "duplicate-detection",
+    "fuzzy-matching",
+    "data-cleaning",
+    "phonetic-matching",
+    "undoable-canonicalization"
+  ],
+  "description": "Finds similar values in a text column with exact, normalized, edit-distance, Jaro-Winkler, n-gram, and phonetic matching.",
+  "publisher": "DataRefine",
+  "icon": "clean"
+}

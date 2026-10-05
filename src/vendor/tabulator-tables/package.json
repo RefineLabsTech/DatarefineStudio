@@ -1,0 +1,14 @@
+{
+  "name": "tabulator-tables",
+  "version": "6.3.1",
+  "private": true,
+  "type": "module",
+  "description": "Vendored Tabulator 6.3.1 (MIT) so the sheet loads without a separate npm install",
+  "module": "./tabulator_esm.min.mjs",
+  "main": "./tabulator_esm.min.mjs",
+  "exports": {
+    ".": "./tabulator_esm.min.mjs",
+    "./tabulator.min.css": "./tabulator.min.css",
+    "./dist/css/tabulator.min.css": "./tabulator.min.css"
+  }
+}
