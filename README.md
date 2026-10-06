@@ -320,11 +320,9 @@ Plugins can provide:
 * New workflows
 * Additional snippets
 
-The application currently includes:
-
-* **Clean Kit**
-* **Studio UI Kit**
-
+<p align="center">
+  <img src="docs/images/plugin-marketplace.png" alt="DataRefine Studio" width="100%">
+</p>
 ---
 
 # 🤖 AI Integration
