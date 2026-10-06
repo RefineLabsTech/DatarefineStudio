@@ -224,16 +224,9 @@ Explorer
 ## SQL
 
 Use DuckDB for analytical SQL directly against your dataset.
-
-```sql
-SELECT
-    customer_id,
-    COUNT(*) AS orders,
-    SUM(amount) AS revenue
-FROM data
-GROUP BY customer_id
-ORDER BY revenue DESC;
-```
+<p align="center">
+  <img src="docs/images/sql-editor.png" alt="DataRefine Studio" width="100%">
+</p>
 
 ---
 
@@ -248,6 +241,9 @@ df = df.with_columns(
       .alias("name")
 )
 ```
+<p align="center">
+  <img src="docs/images/python-editor.png" alt="DataRefine Studio" width="100%">
+</p>
 
 The Python stage provides injected objects such as:
 
