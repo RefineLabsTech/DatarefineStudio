@@ -571,6 +571,9 @@ Ember
 Nord
 Sand
 ```
+<p align="center">
+  <img src="docs/images/color-theme.png" alt="DataRefine Studio" width="100%">
+</p>
 
 ---
 
