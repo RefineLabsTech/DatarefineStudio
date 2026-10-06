@@ -338,6 +338,9 @@ Google Gemini
 Anthropic
 OpenRouter
 ```
+<p align="center">
+  <img src="docs/images/ai-inte.png" alt="DataRefine Studio workspace" width="95%">
+</p>
 
 The AI layer can be used alongside the existing local data-processing workflow.
 
@@ -355,6 +358,9 @@ SSH Tunnel
 Credentials
 Connection Name
 ```
+<p align="center">
+  <img src="docs/images/db-connection.png" alt="DataRefine Studio workspace" width="95%">
+</p>
 
 After connecting, datasets can be queried using SQL.
 
@@ -372,7 +378,7 @@ Fail
 ```
 
 <p align="center">
-  <img src="docs/images/db-connection.png" alt="DataRefine Studio workspace" width="95%">
+  <img src="docs/images/pushdb.png" alt="DataRefine Studio workspace" width="95%">
 </p>
 
 ---
