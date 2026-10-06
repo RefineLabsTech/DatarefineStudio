@@ -38,6 +38,10 @@
   <img src="docs/images/datarefine-studio.png" alt="DataRefine Studio workspace" width="95%">
 </p>
 
+<p align="center">
+  <img src="docs/images/data-cleaning.png" alt="DataRefin Studio workspace" width="95%">
+</p>
+
 DataRefine Studio is built for people who work with messy, inconsistent and constantly changing datasets.
 
 Instead of switching between a spreadsheet, SQL editor, Python notebook and scripting environment, DataRefine brings the workflow into one desktop application.
