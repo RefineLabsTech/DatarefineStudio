@@ -371,6 +371,10 @@ Append
 Fail
 ```
 
+<p align="center">
+  <img src="docs/images/db-connection.png" alt="DataRefine Studio workspace" width="95%">
+</p>
+
 ---
 
 # 🖥️ Desktop Technology
